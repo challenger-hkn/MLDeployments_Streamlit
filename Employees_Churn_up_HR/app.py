@@ -35,9 +35,9 @@ st.sidebar.markdown(
 						Retain your employees.\
 						</h1>", unsafe_allow_html=True)
 
-# im = Image.open("churn.png")
-# st.image(im, width=300)
-st.sidebar.image("churn.png", use_column_width=True)
+im = Image.open("churn.png")
+st.sidebar.image(im, width=300)
+# st.sidebar.image("churn.png", use_column_width=True)
 
 	
 st.sidebar.write('\n')
