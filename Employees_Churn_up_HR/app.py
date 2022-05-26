@@ -8,7 +8,7 @@ from PIL import Image
 st.set_page_config(
     page_title='Employee Decision Predictor',
     page_icon='icon1.png'
-	)
+  	)
 
 st.markdown(
 			"<h2 style='font-size:230%;\
@@ -36,7 +36,7 @@ st.sidebar.markdown(
 						</h1>", unsafe_allow_html=True)
 
 im = Image.open("churn.png")
-st.sidebar.image(im, width=300)
+st.image(im, width=300)
 # st.sidebar.image("churn.png", use_column_width=True)
 
 st.sidebar.markdown(
