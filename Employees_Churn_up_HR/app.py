@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import base64
 from IPython.core.display import HTML
+from PIL import Image
 
 st.set_page_config(
     page_title='Employee Decision Predictor',
