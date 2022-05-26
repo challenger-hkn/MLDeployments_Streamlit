@@ -36,7 +36,7 @@ st.sidebar.markdown(
 
 st.sidebar.markdown(f"""
     		<div>
-        	<img class="emir.png" 
+        	<img class="churn.png" 
 				 src="data:image/png;base64,{base64.b64encode(open("churn.png", "rb").read()).decode()}" 
 				 width="300">
 			</img>
