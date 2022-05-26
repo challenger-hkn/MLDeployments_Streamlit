@@ -46,21 +46,6 @@ st.sidebar.markdown(
     		</div>
     		""", unsafe_allow_html=True)
 
-
-#im = Image.open("churn.png")
-#st.image(im, width=300)
-# st.sidebar.image("churn.png", use_column_width=True)
-
-st.sidebar.markdown(
-    		f"""
-    		<div>
-        	<img class="churn1.png" 
-				src="https://https://www.reminetwork.com/wp-content/uploads/employeechurn.jpg" 
-				width="300">
-			</img>
-    		</div>
-    		""", unsafe_allow_html=True
-			)
 st.sidebar.write('\n')
 st.sidebar.markdown("""
 			<p style='text-align:center;\
