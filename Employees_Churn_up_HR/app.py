@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import pickle5
 import pandas as pd
 import base64
 from IPython.core.display import HTML
