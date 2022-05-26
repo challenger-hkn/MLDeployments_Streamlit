@@ -35,10 +35,10 @@ st.sidebar.markdown(
 						Retain your employees.\
 
 im = Image.open("churn.png")
-st.image(im, width=300)</h1>", unsafe_allow_html=True)
+st.image(im, width=300)
 
 
-st.image('churn.png', width=300)
+	
 st.sidebar.write('\n')
 st.sidebar.markdown("""
 			<p style='text-align:center;\
