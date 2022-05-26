@@ -33,16 +33,7 @@ st.sidebar.markdown(
 						color: red;font-family:tahoma;font-size:115%;'> Human is the most valuable asset.\
 						Retain your employees.\
 			</h1>", unsafe_allow_html=True)
-
-st.sidebar.markdown(f"""
-    		<div>
-        	<img class="churn.png" 
-				 src="data:image/png;base64,{base64.b64encode(open("churn.png", "rb").read()).decode()}" 
-				 width="300">
-			</img>
-    		</div>
-    		""", unsafe_allow_html=True)
-
+st.image('churn.png', width=300)
 st.sidebar.write('\n')
 st.sidebar.markdown("""
 			<p style='text-align:center;\
