@@ -4,6 +4,7 @@ import pandas as pd
 import base64
 from IPython.core.display import HTML
 from PIL import Image
+import os
 
 st.set_page_config(
     page_title='Employee Decision Predictor',
@@ -35,8 +36,10 @@ st.sidebar.markdown(
 						Retain your employees.\
 						</h1>", unsafe_allow_html=True)
 
-im = Image.open("churn.png")
-st.image(im, width=300)
+path = os.path.dirname(__file__)
+my_file = path+'/photo.png'
+#im = Image.open("churn.png")
+#st.image(im, width=300)
 # st.sidebar.image("churn.png", use_column_width=True)
 
 st.sidebar.markdown(
