@@ -246,4 +246,4 @@ def set_bg(png_file):
     """ % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-set_bg('background_image4.png')
+set_bg('background.png')
