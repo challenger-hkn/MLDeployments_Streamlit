@@ -191,7 +191,7 @@ elif selection =="Random Forest":
 	model = pickle.load(open('rf_grid_model.pkl', 'rb'))
 	prediction = model.predict(new_df)
 elif selection =="KNN":
-	model = pickle.load(open('knn_final_pickle.pkl', 'rb'))
+	model = pickle.load(open('knn_final_pickle .pkl', 'rb'))
 	prediction = model.predict(user_inputs_transformed)
 
 st.write('\n')
