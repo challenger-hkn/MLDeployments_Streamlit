@@ -143,7 +143,7 @@ st.write((HTML(df_show.to_html(index=False, justify='left'))))
 
 # dumy model
 df_input = pd.DataFrame.from_dict([coll_dict])
-scaler= pickle.load(open("scaler_for_knn.pkl", 'rb'))
+scaler= pickle.load(open("scaler_for_knn .pkl", 'rb'))
 user_inputs_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
 user_inputs_transformed = scaler.transform(user_inputs_dumy)
 
