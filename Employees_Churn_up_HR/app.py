@@ -146,9 +146,10 @@ df_input = pd.DataFrame.from_dict([coll_dict])
 df_input.Salary = df_input.Salary.map({"low":1, "medium" : 2, "high" : 3})
 st.write(df_input)
 user_inputs_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
+st.write(user_inputs_dumy)
 scaler= pickle.load(open("scaler_knn.pkl", 'rb'))
 
-st.write(user_inputs_dumy)
+
 user_inputs_transformed = scaler.transform(user_inputs_dumy)
 st.write(user_inputs_transformed)
 
