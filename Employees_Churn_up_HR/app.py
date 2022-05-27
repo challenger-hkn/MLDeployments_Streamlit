@@ -143,7 +143,8 @@ st.write((HTML(df_show.to_html(index=False, justify='left'))))
 
 # dumy model
 df_input = pd.DataFrame.from_dict([coll_dict])
-scaler= pickle.load(open("scaler_for_knn .pkl", 'rb'))
+df_input.Salary = df_input.Salary.map({"low":1, "medium" : 2, "high" : 3})
+scaler= pickle.load(open("scaler_knn .pkl", 'rb'))
 user_inputs_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
 user_inputs_transformed = scaler.transform(user_inputs_dumy)
 
@@ -191,7 +192,7 @@ elif selection =="Random Forest":
 	model = pickle.load(open('rf_grid_model.pkl', 'rb'))
 	prediction = model.predict(new_df)
 elif selection =="KNN":
-	model = pickle.load(open('knn_final_pickle .pkl', 'rb'))
+	model = pickle.load(open('knn_final.pkl', 'rb'))
 	prediction = model.predict(user_inputs_transformed)
 
 st.write('\n')
