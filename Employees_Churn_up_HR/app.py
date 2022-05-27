@@ -107,8 +107,6 @@ st.markdown("""
 			</p>
 			</center>
 			""", unsafe_allow_html=True)
-def highlight(s):
-    return ["background-color: white"]
 
 df_show = pd.DataFrame.from_dict([coll_dict])
 df_show = pd.DataFrame(df_show, index=[0])
@@ -146,8 +144,10 @@ df_input = pd.DataFrame.from_dict([coll_dict])
 df_input.Salary = df_input.Salary.map({"low":1, "medium" : 2, "high" : 3})
 scaler= pickle.load(open("scaler_knn.pkl", 'rb'))
 df_input_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
+st.write(df_input)
+st.write(df_input_dumy)
 df_input_scaled = scaler.transform(df_input_dumy)
-
+st.write(df_input_scaled)
 # encoder
 loaded_enc = pickle.load(open("encoder.pkl", 'rb'))
 new_df = pd.DataFrame(df_input, index=[0])
