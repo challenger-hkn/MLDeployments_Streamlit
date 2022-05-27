@@ -4,7 +4,6 @@ import pandas as pd
 import base64
 from IPython.core.display import HTML
 from PIL import Image
-import os
 
 st.set_page_config(
     page_title='Employee Decision Predictor',
@@ -25,7 +24,7 @@ st.markdown(
 st.write('\n')
 
 st.markdown("""
-			<style>
+		<style>
     		[data-baseweb="select"] {margin-top: -20px;}
     		</style>
     		""", unsafe_allow_html=True,)
@@ -60,7 +59,7 @@ Average_Monthly_Hours = st.sidebar.slider("Average Monthly Hours", min_value=0, 
 
 st.sidebar.write('\n')
 
-Number_Project = st.sidebar.number_input(label="Number of Projects", min_value=1, max_value=200)
+Number_Project = st.sidebar.number_input(label="Number of Projects", min_value=1, max_value=10)
 
 st.sidebar.write('\n')
 
@@ -144,14 +143,14 @@ st.write((HTML(df_show.to_html(index=False, justify='left'))))
 # dumy model
 df_input = pd.DataFrame.from_dict([coll_dict])
 df_input.Salary = df_input.Salary.map({"low":1, "medium" : 2, "high" : 3})
-scaler= pickle.load(open("scaler_knn .pkl", 'rb'))
+scaler= pickle.load(open("scaler_knn.pkl", 'rb'))
 user_inputs_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
 user_inputs_transformed = scaler.transform(user_inputs_dumy)
 
 # encoder
 loaded_enc = pickle.load(open("encoder.pkl", 'rb'))
 new_df = pd.DataFrame(df_input, index=[0])
-new_df.Salary = new_df.Salary.map({"low":1, "medium" : 2, "high" : 3})
+
 
 cat = new_df.select_dtypes("object").columns
 new_df[cat] = loaded_enc.transform(new_df[cat])
