@@ -146,7 +146,7 @@ df_input.Salary = df_input.Salary.map({"low":1, "medium" : 2, "high" : 3})
 df_input_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
 st.write(df_input)
 st.write(df_input_dumy)
-scaler= pickle.load(open("scaler_knn.pkl", 'rb'))
+scaler= pickle.load(open("scaler.pkl", 'rb'))
 df_input_scaled = scaler.transform(df_input_dumy)
 st.write(df_input_scaled)
 # encoder
