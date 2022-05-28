@@ -139,23 +139,19 @@ st.write('\n')
 st.write((HTML(df_show.to_html(index=False, justify='left'))))
 
 # dumy model
-
 df_input = pd.DataFrame.from_dict([coll_dict])
 df_input.Salary = df_input.Salary.map({"low":1, "medium" : 2, "high" : 3})
 
 df_input_dumy = pd.get_dummies(df_input).reindex(columns=columns, fill_value=0)
-st.write(df_input)
-st.write(df_input_dumy)
 scaler= pickle.load(open("Employees_Churn_up_HR/scaler.pkl", 'rb'))
 df_input_scaled = scaler.transform(df_input_dumy)
-st.write(df_input_scaled)
+
 # encoder
 loaded_enc = pickle.load(open("Employees_Churn_up_HR/encoder.pkl", 'rb'))
 new_df = pd.DataFrame(df_input, index=[0])
 
 cat = new_df.select_dtypes("object").columns
 new_df[cat] = loaded_enc.transform(new_df[cat])
-
 
 st.sidebar.markdown("""
 			<p style='text-align:center;\
@@ -195,8 +191,6 @@ elif selection =="Random Forest":
 elif selection =="KNN":
 	model = pickle.load(open('Employees_Churn_up_HR/knn_final.pkl', 'rb'))
 	prediction = model.predict(df_input_scaled)
-
-# st.write('\n')
 
 col1, col2, = st.columns([1, 1.5])
 if col2.button("PREDICT"):
