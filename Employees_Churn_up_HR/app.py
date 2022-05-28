@@ -186,14 +186,14 @@ selection = st.selectbox("",
 			["Gradient Boosting", "Random Forest", "KNN"])
 
 if selection =="Gradient Boosting":
-	model = pickle.load(open('gradient_boosting_model.pkl', 'rb'))
+	model = pickle.load(open('Employees_Churn_up_HR/gradient_boosting_model.pkl', 'rb'))
 	prediction= model.predict(new_df)
 
 elif selection =="Random Forest":
-	model = pickle.load(open('rf_grid_model.pkl', 'rb'))
+	model = pickle.load(open('Employees_Churn_up_HR/rf_grid_model.pkl', 'rb'))
 	prediction = model.predict(new_df)
 elif selection =="KNN":
-	model = pickle.load(open('knn_final.pkl', 'rb'))
+	model = pickle.load(open('Employees_Churn_up_HR/knn_final.pkl', 'rb'))
 	prediction = model.predict(df_input_scaled)
 
 # st.write('\n')
