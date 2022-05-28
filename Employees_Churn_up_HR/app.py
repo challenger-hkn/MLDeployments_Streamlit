@@ -205,7 +205,7 @@ if col2.button("PREDICT"):
 		st.markdown(f"""
     		<div>
         	<img class="group3.png" 
-				 src="data:image/png;base64,{base64.b64encode(open("to be continued1.png", "rb").read()).decode()}" 
+				 src="data:image/png;base64,{base64.b64encode(open("Employees_Churn_up_HR/to be continued1.png", "rb").read()).decode()}" 
 				 width="704">
 			</img>
     		</div>
@@ -217,7 +217,7 @@ if col2.button("PREDICT"):
 		st.markdown(f"""
     		<div>
         	<img class="group3.png" 
-				 src="data:image/png;base64,{base64.b64encode(open("left.png", "rb").read()).decode()}" 
+				 src="data:image/png;base64,{base64.b64encode(open("Employees_Churn_up_HR/left.png", "rb").read()).decode()}" 
 				 width="704">
 			</img>
     		</div>
