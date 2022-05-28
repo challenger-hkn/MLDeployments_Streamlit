@@ -150,7 +150,7 @@ scaler= pickle.load(open("Employees_Churn_up_HR/scaler.pkl", 'rb'))
 df_input_scaled = scaler.transform(df_input_dumy)
 st.write(df_input_scaled)
 # encoder
-loaded_enc = pickle.load(open("encoder.pkl", 'rb'))
+loaded_enc = pickle.load(open("Employees_Churn_up_HR/encoder.pkl", 'rb'))
 new_df = pd.DataFrame(df_input, index=[0])
 
 cat = new_df.select_dtypes("object").columns
